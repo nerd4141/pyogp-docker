@@ -4,4 +4,4 @@
 *** 63 ****
 --- 64,65 ----
 +                 if data > 255 and data < 65535:
-+                     return struct.pack('>BB', 255, data-255)
++                     pack = 'H'
