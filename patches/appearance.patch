@@ -1,0 +1,7 @@
+*** appearance.py.old	Wed Oct 31 10:10:56 2018
+--- appearance.py	Wed Oct 31 10:11:14 2018
+*************** class AppearanceManager(DataManager):
+*** 162 ****
+!         if shape['WearableType'] != WearablesIndex.WT_SHAPE:
+--- 162 ----
+!         if shape['WearableType'] not in [WearablesIndex.WT_SHAPE, WearablesIndex.WT_SKIN]:

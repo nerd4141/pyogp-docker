@@ -1,0 +1,10 @@
+*** template_parser.py.old	Wed Oct 31 11:29:21 2018
+--- template_parser.py	Wed Oct 31 11:29:52 2018
+*************** class MessageTemplateParser(object):
+*** 139 ****
+!             msg_num_hex = struct.pack('>BBB', 0xff, 0xff, msg_num)
+--- 139,142 ----
+!             if msg_num > 255:
+!                 msg_num_hex = struct.pack('>BBBB', 0xff, 0xff, 255, msg_num-255)
+!             else:
+!                 msg_num_hex = struct.pack('>BBB', 0xff, 0xff, msg_num)

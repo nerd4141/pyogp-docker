@@ -1,0 +1,8 @@
+*** login.py.old	Wed Oct 31 11:23:57 2018
+--- login.py	Wed Oct 31 11:24:03 2018
+*************** class Login(object):
+*** 271 ****
+--- 272,274 ----
++                 import os
++                 os.kill(os.getpid(), 9)
++
