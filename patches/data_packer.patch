@@ -2,6 +2,9 @@
 --- data_packer.py	Wed Oct 31 12:49:48 2018
 *************** class DataPacker(object):
 *** 63 ****
---- 64,65 ----
+--- 64,68 ----
 +                 if data > 255 and data < 65535:
-+                     pack = 'H'
++                     if pack == 'b':
++                         pack = 'h'
++                     elif pack == 'B':
++                         pack = 'H'
