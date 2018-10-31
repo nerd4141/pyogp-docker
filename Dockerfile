@@ -42,9 +42,13 @@ RUN hg clone https://enus_linden@bitbucket.org/lindenlab/pyogp.lib.client-maint
 
 ADD patches/template_parser.patch /root/template_parser.patch
 ADD patches/data_packer.patch /root/data_packer.patch
+ADD patches/event_queue.patch /root/event_queue.patch
+
 WORKDIR /root/hg/pyogp.lib.base/pyogp/lib/base/message
 RUN patch -p0 </root/template_parser.patch
 RUN patch -p0 </root/data_packer.patch
+WORKDIR /root/hg/pyogp.lib.base/pyogp/lib/base
+RUN patch -p0 </root/event_queue.patch
 WORKDIR /root/hg/pyogp.lib.base
 RUN python setup.py install
 
